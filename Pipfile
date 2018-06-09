@@ -8,6 +8,9 @@ name = "pypi"
 [requires]
 python_version = "3.7"
 
+[packages]
+pytest = "*"
+
 [packages.e1839a8]
 path = "."
 editable = true
