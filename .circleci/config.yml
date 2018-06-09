@@ -46,6 +46,7 @@ jobs:
           name: run tests
           command: |
             pipenv run pytest tests
+            pipenv run pylint src tests
 
       - store_artifacts:
           path: test-reports
