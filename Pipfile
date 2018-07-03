@@ -10,8 +10,5 @@ python_version = "3.7"
 
 [packages]
 pytest = "*"
-pylint = "*"
-
-[packages.e1839a8]
-path = "."
-editable = true
+e1839a8 = { path = ".", editable = true }
+pylint = {editable = true, ref = "master", git = "https://github.com/PyCQA/pylint.git"}
