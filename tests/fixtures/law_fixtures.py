@@ -1,12 +1,19 @@
-from pathlib import Path
+from dataclasses import dataclass
+from waffle.law_url import LawUrl
 import typing
 from waffle.config import PROJECT_ROOT
 
 FIXTURES_ROOT = PROJECT_ROOT / 'tests' / 'fixtures'
 
 
-def fixtures() -> typing.Iterable[typing.Tuple[Path, str]]:
+@dataclass
+class LawFixture:
+    url: LawUrl
+    content: str
+
+
+def fixtures() -> typing.Iterable[LawFixture]:
     for fixture in FIXTURES_ROOT.glob('**/*.html'):
         relative = fixture.relative_to(FIXTURES_ROOT)
-        contents = fixture.read_text()
-        yield relative, contents
+        content = fixture.read_text()
+        yield LawFixture(url=LawUrl(relative), content=content)
