@@ -16,4 +16,4 @@ def fixtures() -> typing.Iterable[LawFixture]:
     for fixture in FIXTURES_ROOT.glob('**/*.html'):
         relative = fixture.relative_to(FIXTURES_ROOT)
         content = fixture.read_text()
-        yield LawFixture(url=LawUrl(relative), content=content)
+        yield LawFixture(url=LawUrl(str(relative)), content=content)
