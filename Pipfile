@@ -10,5 +10,20 @@ python_version = "3.7"
 
 [packages]
 pytest = "*"
-e1839a8 = { path = ".", editable = true }
-pylint = {editable = true, ref = "master", git = "https://github.com/PyCQA/pylint.git"}
+requests = "*"
+lxml = "*"
+ipython = "*"
+astroid = "*"
+requests-mock = "*"
+
+[pipenv]
+allow_prereleases = true
+
+[packages.e1839a8]
+path = "."
+editable = true
+
+[packages.pylint]
+git = "https://github.com/PyCQA/pylint.git"
+editable = true
+ref = "master"
