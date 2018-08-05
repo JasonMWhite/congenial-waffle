@@ -1,6 +1,6 @@
+import typing
 from dataclasses import dataclass
 from waffle.law_url import LawUrl
-import typing
 from waffle.config import PROJECT_ROOT
 
 FIXTURES_ROOT = PROJECT_ROOT / 'tests' / 'fixtures'
