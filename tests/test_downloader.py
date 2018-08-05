@@ -14,5 +14,6 @@ def law_downloader() -> downloader.Downloader:
 
 def test_downloader(law_downloader: downloader.Downloader) -> None:
     results = list(law_downloader.legislation('english'))
-    assert len(results) == 3
-    assert all([result.startswith('\n<!DOCTYPE html>\n') for result in results])
+    assert len(results) == 2
+    assert all([result.path.path().startswith('/' + downloader.Downloader.LAWS['english']) for result in results])
+    assert all([result.content.startswith('\n<!DOCTYPE html>\n') for result in results])
