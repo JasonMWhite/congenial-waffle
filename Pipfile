@@ -15,6 +15,7 @@ lxml = "*"
 ipython = "*"
 astroid = "*"
 requests-mock = "*"
+pylint = "*"
 
 [pipenv]
 allow_prereleases = true
@@ -22,8 +23,3 @@ allow_prereleases = true
 [packages.e1839a8]
 path = "."
 editable = true
-
-[packages.pylint]
-git = "https://github.com/PyCQA/pylint.git"
-editable = true
-ref = "master"
